@@ -31,6 +31,8 @@
 let table = d3.select("#summary-table");
 let tbody = table.select("tbody");
 let trow;
+
+
 for (var i = 0; i < data.metadata.length; i++) {
 
   let id = data.metadata[i].id;
@@ -54,9 +56,9 @@ for (var i = 0; i < data.metadata.length; i++) {
 
   let wfreq = data.metadata[i].wfreq;
   trow.append("td").text(wfreq);
+    
 }
 
-  
   // Display the sample metadata, i.e., an individual's demographic information.
  // Use D3 to create an event handler
 
