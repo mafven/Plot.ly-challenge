@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<style>
+  h5{
+    color: rgb(17, 17, 17);
+    text-transform: uppercase;
+    font-weight: bold;
+
+  }
+
+  h4 {
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    text-align: left;
+  }
+
+  .jumbotron {
+    background-color: #1c6973;
+    color: white;}
+}
+  .p{
+    color: white;
+      }
+
+  .well {background-color: #1c6973;
+  }
+
+  .panel-heading {
+    text-align: center;
+    background-color: #1c6973!important;
+}
+  .panel-title{
+  font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    text-align: left;
+}
+
+  .table {
+   margin: auto;
+   width: 100% !important; 
+   text-align: center; 
+   float: right;
+   padding: auto;
+}
+  #selDataset{
+    font-size: 16px;
+  }
+  thead {
+  display:block;
+}
+
+  tbody {
+  display:block;
+  overflow-y:scroll;
+  height:500px;
+  color: black;
+}
+th{
+  text-transform: uppercase;
+  font-weight: bold;}
+
+  td, th {
+  width: 500px;
+  text-align: left;
+}
+
+tbody>tr:nth-child(even){background-color: #97c8cc !important}
+tbody>tr:nth-child(odd){background-color: #fff !important}
+
+</style>
+</head>
+
+<body>
+  <div id="pie"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 jumbotron text-center ">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p class="p">Select a subject ID to explore the dataset and display the interactive charts</p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-3">
+        <div class="well">
+          <h4>Test Subject ID No.:</h4>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading  ">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="container">
+      <div class="col-sm-8 col-sm-4 panel">
+        <div id="bar"></div>
+      </div>
+      <div class="col-sm-8 col-sm-4 panel">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+  <div class="row ">
+      <div class="col-md-12 panel"></div>
+      <table id="summary-table" class="table table-striped table-inverse ">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Age</th>
+            <th>Ethnicity</th>
+            <th>Gender </th>
+            <th>Location </th>
+            <th>Bbtype </th>
+            <th>Wfreq</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+    </div>
+  </div>
+  </div>
+</div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="./static/js/app.js"></script>
+  <!-- <script src="./static/js/bonus.js"></script> -->
+  <script src="./data/samples.json"></script>
+  
+</body>
+
+</html>
