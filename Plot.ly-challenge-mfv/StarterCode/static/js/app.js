@@ -27,56 +27,36 @@
         dropdown.add(option);
         }
 
-/////////////////////
-
+ // Display each key-value pair from the metadata JSON object somewhere on the page.
 let table = d3.select("#summary-table");
 let tbody = table.select("tbody");
 let trow;
 for (var i = 0; i < data.metadata.length; i++) {
+
   let id = data.metadata[i].id;
   trow = tbody.append("tr");
   trow.append("td").text(id);
+
+  let age = data.metadata[i].age;;
+  trow.append("td").text(age);
+
+  let ethnicity = data.metadata[i].ethnicity;
+  trow.append("td").text(ethnicity);
+
+  let gender = data.metadata[i].gender;
+  trow.append("td").text(gender);
+
+  let location = data.metadata[i].location;
+  trow.append("td").text(location);
+
+  let bbtype = data.metadata[i].bbtype;
+  trow.append("td").text(bbtype);
+
+  let wfreq = data.metadata[i].wfreq;
+  trow.append("td").text(wfreq);
 }
 
-
-/////////
   
- // Display each key-value pair from the metadata JSON object somewhere on the page.
-  //define variables for table data
-  // console.log(data.metadata[0])
-  
-  // let id = data.metadata[0].id;
-  // let age = data.metadata[0].age;
-  // let ethnicity = data.metadata[0].ethnicity;
-  // let gender = data.metadata[0].gender;
-  // let location = data.metadata[0].location;
-  // let bbtype = data.metadata[0].bbtype;
-  // let wfreq = data.metadata[0].wfreq;
-  
-// console.log(id)
-// console.log(age)
-// console.log(ethnicity)
-// console.log(gender)
-// console.log(location)
-// console.log(bbtype)
-// console.log(wfreq)
-  
-  // let table = d3.select("#summary-table");
-  // let tbody = table.select("tbody");
-  // let trow;
-  //   for (var i = 0; i < data.metadata[0].length; i++) {
-  //     trow = tbody.append("tr");
-  //     trow.append("td").text(id[i]);
-  // //     trow.append("td").text(age[i]);
-  // //     trow.append("td").text(ethnicity[i]);
-  // //     trow.append("td").text(gender[i]);
-  // //     trow.append("td").text(location[i]);
-  // //     trow.append("td").text(bbtype[i]);
-  // //     trow.append("td").text(wfreq[i]);
-  //         }
-
-          
-        
   // Display the sample metadata, i.e., an individual's demographic information.
  // Use D3 to create an event handler
 
