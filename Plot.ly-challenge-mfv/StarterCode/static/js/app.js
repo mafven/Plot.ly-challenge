@@ -1,6 +1,6 @@
   // Use the D3 library to read in samples.json.
   d3.json("data/samples.json").then((data) => {
-     console.log(data);
+    //  console.log(data);
     //  let x = data.filter(element=> element.metadata[0])
     //  console.log(x)
     //  console.log(data.metadata[0].id);// get demographic info
@@ -26,31 +26,56 @@
         option.text =  data.metadata[i].id;
         dropdown.add(option);
         }
+
+/////////////////////
+
+let table = d3.select("#summary-table");
+let tbody = table.select("tbody");
+let trow;
+for (var i = 0; i < data.metadata.length; i++) {
+  let id = data.metadata[i].id;
+  trow = tbody.append("tr");
+  trow.append("td").text(id);
+}
+
+
+/////////
   
  // Display each key-value pair from the metadata JSON object somewhere on the page.
   //define variables for table data
-  console.log(data.metadata[0])
-  // let Id = data.metadata[0]
-  // let Ethnicity = data.metadata[0]
-  // let Gender = data.metadata[0]
-  // let Location = data.metadata[0]
-  // let Bbtype = data.metadata[0]
-  // let Wfreq = data.metadata[0]
+  // console.log(data.metadata[0])
+  
+  // let id = data.metadata[0].id;
+  // let age = data.metadata[0].age;
+  // let ethnicity = data.metadata[0].ethnicity;
+  // let gender = data.metadata[0].gender;
+  // let location = data.metadata[0].location;
+  // let bbtype = data.metadata[0].bbtype;
+  // let wfreq = data.metadata[0].wfreq;
+  
+// console.log(id)
+// console.log(age)
+// console.log(ethnicity)
+// console.log(gender)
+// console.log(location)
+// console.log(bbtype)
+// console.log(wfreq)
+  
+  // let table = d3.select("#summary-table");
+  // let tbody = table.select("tbody");
+  // let trow;
+  //   for (var i = 0; i < data.metadata[0].length; i++) {
+  //     trow = tbody.append("tr");
+  //     trow.append("td").text(id[i]);
+  // //     trow.append("td").text(age[i]);
+  // //     trow.append("td").text(ethnicity[i]);
+  // //     trow.append("td").text(gender[i]);
+  // //     trow.append("td").text(location[i]);
+  // //     trow.append("td").text(bbtype[i]);
+  // //     trow.append("td").text(wfreq[i]);
+  //         }
 
-  function buildTable(dates, openPrices, highPrices, lowPrices, closingPrices, volume) {
-        let table = d3.select("#summary-table");
-        let tbody = table.select("tbody");
-        let trow;
-        for (var i = 0; i < 12; i++) {
-            trow = tbody.append("tr");
-            trow.append("td").text(dates[i]);
-            trow.append("td").text(openPrices[i]);
-            trow.append("td").text(highPrices[i]);
-            trow.append("td").text(lowPrices[i]);
-            trow.append("td").text(closingPrices[i]);
-            trow.append("td").text(volume[i]);
-          }
-        }
+          
         
   // Display the sample metadata, i.e., an individual's demographic information.
  // Use D3 to create an event handler
