@@ -113,7 +113,7 @@ for (var i = 0; i < data.metadata.length; i++) {
             let label1 = data.samples[i].otuLabels;
             x_axis = x_axis.slice(0,10).reverse()
             y_axis =  y_axis.slice(0,10).reverse()
-            y_axis =  y_axis.map(element=> '<b>OTU_</b>' + element);
+            y_axis =  y_axis.map(element=> '<b>OTU_</b> ' + element + "    ");
             
             // Plotly.newPlot("bar",data)
             Plotly.restyle("bar", "x", [x_axis]);
@@ -145,7 +145,8 @@ for (var i = 0; i < data.metadata.length; i++) {
                   font: {
                     family: 'sans-serif',
                     size: 16,
-                    color: '#7f7f7f'
+                    color: '#7f7f7f',
+                    
                   }
                 },
               },
